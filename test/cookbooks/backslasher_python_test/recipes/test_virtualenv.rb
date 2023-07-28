@@ -1,9 +1,9 @@
 #
 # Author:: Sean Porter <portertech@hw-ops.com>
-# Cookbook Name:: python
+# Cookbook:: python
 # Recipe:: test_virtualenv
 #
-# Copyright 2013, Heavy Water Operations, LLC.
+# Copyright:: 2013, Heavy Water Operations, LLC.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,18 +18,18 @@
 # limitations under the License.
 #
 
-backslasher_python_virtualenv "/tmp/virtualenv" do
-  owner "root"
-  group "root"
+backslasher_python_virtualenv '/tmp/virtualenv' do
+  owner 'root'
+  group 'root'
   action :create
 end
 
-backslasher_python_virtualenv "isolated python environment" do
-  path "/tmp/tobedestroyed"
+backslasher_python_virtualenv 'isolated python environment' do
+  path '/tmp/tobedestroyed'
   action :create
 end
 
-backslasher_python_virtualenv "deleting the isolated python environment" do
-  path "/tmp/tobedestroyed"
+backslasher_python_virtualenv 'deleting the isolated python environment' do
+  path '/tmp/tobedestroyed'
   action :delete
 end

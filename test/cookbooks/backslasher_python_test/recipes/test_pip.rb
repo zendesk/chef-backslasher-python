@@ -1,10 +1,10 @@
 #
 # Author:: Hugo Lopes Tavares <hltbra@gmail.com>
-# Cookbook Name:: python
+# Cookbook:: python
 # Recipe:: test_virtualenv
 #
-# Copyright 2013, Heavy Water Operations, LLC.
-# Copyright 2014, Yipit, Inc.
+# Copyright:: 2013, Heavy Water Operations, LLC.
+# Copyright:: 2014, Yipit, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,33 +19,33 @@
 # limitations under the License.
 #
 
-file "/tmp/first-install.txt" do
-  content "test"
+file '/tmp/first-install.txt' do
+  content 'test'
   action :nothing
 end
 
-file "/tmp/second-install.txt" do
-  content "test"
+file '/tmp/second-install.txt' do
+  content 'test'
   action :nothing
 end
 
-backslasher_python_virtualenv "/tmp/virtualenv" do
-  owner "root"
-  group "root"
+backslasher_python_virtualenv '/tmp/virtualenv' do
+  owner 'root'
+  group 'root'
   action :create
 end
 
-backslasher_python_pip "should_dsl first install" do
-  package_name "should_dsl"
-  virtualenv "/tmp/virtualenv"
-  version "2.1.2"
-  notifies :create, "file[/tmp/first-install.txt]"
+backslasher_python_pip 'should_dsl first install' do
+  package_name 'should_dsl'
+  virtualenv '/tmp/virtualenv'
+  version '2.1.2'
+  notifies :create, 'file[/tmp/first-install.txt]'
 end
 
-backslasher_python_pip "should_dsl second install" do
-  package_name "should_dsl"
-  virtualenv "/tmp/virtualenv"
+backslasher_python_pip 'should_dsl second install' do
+  package_name 'should_dsl'
+  virtualenv '/tmp/virtualenv'
   # same version as before
-  version "2.1.2"
-  notifies :create, "file[/tmp/second-install.txt]"
+  version '2.1.2'
+  notifies :create, 'file[/tmp/second-install.txt]'
 end

@@ -1,9 +1,9 @@
 #
 # Author:: Scott M. Likens <scott@mopub.com>
-# Cookbook Name:: python
+# Cookbook:: python
 # Recipe:: test_exert
 #
-# Copyright 2013, MoPub, Inc.
+# Copyright:: 2013, MoPub, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,17 +19,17 @@
 #
 
 backslasher_python_virtualenv "#{Chef::Config[:file_cache_path]}/virtualenv" do
-  interpreter "python"
-  owner "root"
-  group "root"
+  interpreter 'python'
+  owner 'root'
+  group 'root'
   action :create
 end
 
-backslasher_python_pip "boto" do
+backslasher_python_pip 'boto' do
   action :install
   virtualenv "#{Chef::Config[:file_cache_path]}/virtualenv"
 end
 
-backslasher_python_pip "psutil" do
+backslasher_python_pip 'psutil' do
   action :install
 end

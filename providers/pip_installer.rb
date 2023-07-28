@@ -1,9 +1,4 @@
 # Support whyrun
-def whyrun_supported?
-  true
-end
-
-use_inline_resources
 
 action :install do
   get_pip = "#{Chef::Config[:file_cache_path]}/get-pip.py"

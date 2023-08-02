@@ -1,9 +1,9 @@
 #
 # Author:: Alex Kiernan (<alexk@alexandalex.com>)
-# Cookbook Name:: python
+# Cookbook:: python
 # Recipe:: cook-3084
 #
-# Copyright 2013, Alex Kiernan
+# Copyright:: 2013, Alex Kiernan
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,16 +18,16 @@
 # limitations under the License.
 #
 
-include_recipe "backslasher-python"
+include_recipe 'backslasher-python'
 
-backslasher_python_virtualenv "cook-3084" do
+backslasher_python_virtualenv 'cook-3084' do
 end
 
-backslasher_python_virtualenv "cook-3084-interpreter" do
+backslasher_python_virtualenv 'cook-3084-interpreter' do
   # on EL5 the default python we install is called python26
-  if !node['backslasher-python']['install_method'].eql?("source") &&
+  if !node['backslasher-python']['install_method'].eql?('source') &&
      platform_family?('rhel') &&
-     node['platform_version'].split('.').first.to_i < 6
+     node['platform_version'].to_i < 6
     interpreter '/usr/bin/python26'
   else
     interpreter 'python'

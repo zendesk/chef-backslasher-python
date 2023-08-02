@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: backslasher-python
+# Cookbook:: backslasher-python
 # Recipe:: default
 #
 # GPLv2

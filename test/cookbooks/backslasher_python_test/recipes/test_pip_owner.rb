@@ -1,9 +1,9 @@
 #
 # Author:: Hugo Lopes Tavares <hltbra@gmail.com>
-# Cookbook Name:: python
+# Cookbook:: python
 # Recipe:: test_pip_owner
 #
-# Copyright 2016, Nitzan
+# Copyright:: 2016, Nitzan
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -25,9 +25,9 @@ backslasher_python_virtualenv '/tmp/testo-venv' do
   group 'testo'
 end
 
-backslasher_python_pip "should_dsl" do
-  virtualenv "/tmp/testo-venv"
-  version "2.1.2"
+backslasher_python_pip 'should_dsl' do
+  virtualenv '/tmp/testo-venv'
+  version '2.1.2'
   user 'testo'
   group 'testo'
 end

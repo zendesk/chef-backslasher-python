@@ -3,15 +3,15 @@ directory '/tmp/test_pip_options' do
   recursive true
 end
 
-backslasher_python_virtualenv "/tmp/test_pip_options"
+backslasher_python_virtualenv '/tmp/test_pip_options'
 
-directory "/tmp/test_pip_options/bla"
+directory '/tmp/test_pip_options/bla'
 
 backslasher_python_pip 'should_dsl with options' do
   package_name 'should_dsl'
   version '2.1.1'
-  virtualenv "/tmp/test_pip_options"
-  install_options ['-t','/tmp/test_pip_options/bla']
+  virtualenv '/tmp/test_pip_options'
+  install_options ['-t', '/tmp/test_pip_options/bla']
 end
 
 # Fail if you can't find a directory, meaning the package did not install
@@ -26,8 +26,8 @@ backslasher_python_pip 'should_dsl upgrade with options' do
   package_name 'should_dsl'
   action :upgrade
   version '2.1.2'
-  virtualenv "/tmp/test_pip_options"
-  install_options ['-t','/tmp/test_pip_options/bla']
+  virtualenv '/tmp/test_pip_options'
+  install_options ['-t', '/tmp/test_pip_options/bla']
 end
 
 # Fail if you can't find a directory, meaning the package did not install

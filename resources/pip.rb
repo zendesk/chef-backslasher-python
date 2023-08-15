@@ -12,7 +12,6 @@ property :smart_install, [true, false], default: false
 
 action :install do
   pkg_name = install_name(new_resource)
-  Chef::Log.warn("pkg_name: #{pkg_name}")
   args = ['install', *new_resource.install_options, pkg_name]
   if pkg_name && should_install(pkg_name, args, new_resource)
     converge_by "Installing backslasher_python_pip #{new_resource.package_name}" do
@@ -75,7 +74,6 @@ action_class do
     else
       raise 'Invalid subcommand type. Supply Array or String'
     end
-    Chef::Log.warn("Running: #{subcommand}")
     cmd = Mixlib::ShellOut.new(subcommand, options)
     cmd.run_command
     cmd

@@ -15,7 +15,14 @@ action :create do
     user nr.owner if nr.owner
     group nr.group if nr.group
     environment({ 'HOME' => ::Dir.home(nr.owner) }) if nr.owner
-
+    not_if { platform?("ubuntu") && node['platform_version'].to_f <= 20.04 }
+    not_if { exists? }
+  end
+  execute "python3 -m venv #{new_resource.path}" do
+    user nr.owner if nr.owner
+    group nr.group if nr.group
+    environment({ 'HOME' => ::Dir.home(nr.owner) }) if nr.owner
+    not_if { platform?("ubuntu") && node['platform_version'].to_f > 20.04 }
     not_if { exists? }
   end
 end

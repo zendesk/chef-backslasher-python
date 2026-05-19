@@ -1,3 +1,6 @@
+> **This repository has been deprecated and archived.**
+> Chef is no longer used at Zendesk. This backslasher-python cookbook is preserved for reference only and is no longer maintained.
+
 # backslasher-python-cookbook
 
 A cookbook for managing python-related resources in a simple way  
